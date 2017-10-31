@@ -17,3 +17,6 @@ $router->get('/', function () use ($router) {
 $router->get('/ping', function () use ($router) {
     return ucfirst($_ENV['APP_NAME']) . ". Built on " . $_ENV['APP_NAME'] . $router->app->version();
 });
+$router->post('/auth', function () use ($router) {
+    return ucfirst($_ENV['APP_NAME']) . ". Built on " . $_ENV['APP_NAME'] . $router->app->version();
+});

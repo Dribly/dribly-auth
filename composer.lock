@@ -75,7 +75,7 @@
         },
         {
             "name": "illuminate/auth",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/auth.git",
@@ -126,7 +126,7 @@
         },
         {
             "name": "illuminate/broadcasting",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/broadcasting.git",
@@ -175,7 +175,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -220,7 +220,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -269,7 +269,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -313,7 +313,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -363,7 +363,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -407,7 +407,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -451,16 +451,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "f3aa4ecbb188d5f02ea2624f5b739453a9b5abe5"
+                "reference": "9b3bdecfd74279d305ad1d3d56ae62b1b54a230d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/f3aa4ecbb188d5f02ea2624f5b739453a9b5abe5",
-                "reference": "f3aa4ecbb188d5f02ea2624f5b739453a9b5abe5",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/9b3bdecfd74279d305ad1d3d56ae62b1b54a230d",
+                "reference": "9b3bdecfd74279d305ad1d3d56ae62b1b54a230d",
                 "shasum": ""
             },
             "require": {
@@ -506,11 +506,11 @@
                 "orm",
                 "sql"
             ],
-            "time": "2017-10-16T12:20:11+00:00"
+            "time": "2017-10-17T12:16:50+00:00"
         },
         {
             "name": "illuminate/encryption",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/encryption.git",
@@ -556,7 +556,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -601,7 +601,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -651,7 +651,7 @@
         },
         {
             "name": "illuminate/hashing",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/hashing.git",
@@ -695,7 +695,7 @@
         },
         {
             "name": "illuminate/http",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
@@ -741,7 +741,7 @@
         },
         {
             "name": "illuminate/pagination",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pagination.git",
@@ -785,7 +785,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -829,7 +829,7 @@
         },
         {
             "name": "illuminate/queue",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/queue.git",
@@ -884,7 +884,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -934,16 +934,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "0e5db373f0046151af5842c55fa87150267f9649"
+                "reference": "132b06edaab3808f63943004911d58785f164ab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/0e5db373f0046151af5842c55fa87150267f9649",
-                "reference": "0e5db373f0046151af5842c55fa87150267f9649",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/132b06edaab3808f63943004911d58785f164ab4",
+                "reference": "132b06edaab3808f63943004911d58785f164ab4",
                 "shasum": ""
             },
             "require": {
@@ -987,11 +987,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2017-10-13T20:25:55+00:00"
+            "time": "2017-10-17T12:18:29+00:00"
         },
         {
             "name": "illuminate/translation",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -1036,7 +1036,7 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
@@ -1086,16 +1086,16 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "250a3ed348023299bfd4d0a68ea2ab55ff9e902b"
+                "reference": "9c5590c2752f1ca0b0e62f6bca7bdea781a4f3d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/250a3ed348023299bfd4d0a68ea2ab55ff9e902b",
-                "reference": "250a3ed348023299bfd4d0a68ea2ab55ff9e902b",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/9c5590c2752f1ca0b0e62f6bca7bdea781a4f3d2",
+                "reference": "9c5590c2752f1ca0b0e62f6bca7bdea781a4f3d2",
                 "shasum": ""
             },
             "require": {
@@ -1130,7 +1130,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2017-10-11T12:23:21+00:00"
+            "time": "2017-10-16T16:47:50+00:00"
         },
         {
             "name": "laravel/lumen-framework",
@@ -2393,37 +2393,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -2431,7 +2434,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phar-io/manifest",

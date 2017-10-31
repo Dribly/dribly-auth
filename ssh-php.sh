@@ -1,2 +1,2 @@
 #! /bin/sh
-docker exec -it dribly-sensor-php-fpm bash
+docker exec -it dribly-users-php-fpm bash

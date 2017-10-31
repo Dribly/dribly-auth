@@ -1,11 +1,11 @@
 {
-    "name": "powellblyth/dribly",
-    "description": "Sensors for Dribly",
+    "name": "dribly/dribly-users",
+    "description": "User service for Dribly",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.1",
         "laravel/lumen-framework": "<5.5.16",
         "vlucas/phpdotenv": "~2.2"
     },
