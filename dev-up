@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export PHP_VERSION=71
+
+export CONTAINER_NAME_PREFIX=dribly-users
+export COMPOSE_PROJECT_NAME="Dribly"
+export APPLICATION=../
+
+
+echo "Building ${CONTAINER_NAME_PREFIX}"
+docker-compose --project-name="Dribly" up -d users-nginx
+echo "All done. upping ${APP_NAME}  Hope it worked"

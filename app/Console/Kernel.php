@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\ControllerMakeCommand::class,
+        Commands\KeyGenerateCommand::class,
     ];
 
     /**
