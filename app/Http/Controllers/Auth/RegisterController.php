@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class RegisterController extends \App\Http\Controllers\DriblyController
-{
+class RegisterController extends \App\Http\Controllers\DriblyController {
     /*
       |--------------------------------------------------------------------------
       | Register Controller
@@ -34,8 +33,7 @@ class RegisterController extends \App\Http\Controllers\DriblyController
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data) {
         return Validator::make($data, [
                 'firstname' => 'required|string|max:255',
                 'lastname' => 'required|string|max:255',
@@ -50,54 +48,53 @@ class RegisterController extends \App\Http\Controllers\DriblyController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
-    {
+    public function register(Request $request) {
+        $response = null;
         try {
-//            trigger_error(print_r((string) $request->json(),true),E_USER_ERROR);
-//            trigger_error(print_r((string) $request->all(),true),E_USER_ERROR);
-//            trigger_error(print_r($request , true));
-//            return $this->respondError(400, $request->json(),"");
-//            echo "hello";var_dump($request->all());die();
-//            $fields = ['firstname','lastname','email','password','password_confirmation'];
-            \Log::error(print_r($request->json(),true));
-//            trigger_error((array_keys($request->all())));var_dump($request->all());die();
-//            $input = $request->all();
+            \Log::debug(print_r($request->json(), true));
+            \Log::debug(print_r($request->all(), true));
             $this->validator($request->all())->validate();
             $user = $this->create($request->all());
-            return $this->registered($request, $user) ?: redirect($this->redirectPath());
+            if ($this->registered($request, $user)) {
+                $response = $this->respondSuccess($user);
+            } else {
+                $response = $this->respondError(400, $e->errors(), "");
+            }
         } catch (\Illuminate\Validation\ValidationException $e) {
-            return $this->respondError(400, $e->errors(),"");
+            $response = $this->respondError(400, $e->errors(), "Some fields are not correct");
+            \Log::error(print_r($e->getMessage(), true));
         } catch (\Exception $e) {
-            return $this->respondError(500, $e->getMessage(),"");
+            $response = $this->respondError(500, [], $e->getMessage());
+            \Log::error(print_r($e->getMessage(), true));
             var_dump($e);
             echo "no valid";
             die();
         }
+        return $response;
     }
+
     /**
      * Note that this always returns a n array with each of the fields mentioned
      * @param \App\Http\Controllers\Auth\stdClass $input
      * @param type $fields
      * @return array
      */
-protected function getDataValueArray(stdClass $input, $fields)
-{
-    $result = [];
-    foreach ($fields as $fieldName)
-    {
-        // Populate an array member whether the property exists or not
-        $result[$fieldName] = ((property_exists($input, $fieldName)) ? $input->fieldName : null);
+    protected function getDataValueArray(stdClass $input, $fields) {
+        $result = [];
+        foreach ($fields as $fieldName) {
+            // Populate an array member whether the property exists or not
+            $result[$fieldName] = ((property_exists($input, $fieldName)) ? $input->fieldName : null);
+        }
+        return $result;
     }
-    return $result;
-}
+
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \Dribly\User
      */
-    protected function create(array $data):\Dribly\User
-    {
+    protected function create(array $data): \Dribly\User {
         return User::create([
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],
@@ -113,9 +110,7 @@ protected function getDataValueArray(stdClass $input, $fields)
      * @param  mixed  $user
      * @return mixed
      */
-    protected function registered(Request $request, $user)
-    {
-        echo "HI";
-        die(); //
+    protected function registered(Request $request, $user) {
+        ; //
     }
 }
