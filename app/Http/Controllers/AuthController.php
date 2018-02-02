@@ -2,10 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\Auth;
-Use Dribly\User;
+use Dribly\User;
+use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller
-{
+class AuthController extends \App\Http\Controllers\DriblyController {
 
     /**
      * Retrieve the user for the given ID.
@@ -14,6 +15,35 @@ class AuthController extends Controller
      * @return Response
      */
     public function auth(Request $request) {
-        return User::findOrFail($request->email, $request->password);
+        try
+        {
+        $user = User::findOrFail($request->email);
+        }
+        catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e)
+        {
+            $user = null;
+        }
+        $response = false;
+
+        if ($user instanceof User)
+        {
+            if (Hash::check($request->password. $user->password))
+            {
+                $response = $this->respondSuccess($user);
+            }
+        }
+        else
+        {
+            // crazy securoty. dont let them know the email was not a match in a timing attack
+            Hash::check('passwoota', 'thisisnotpasswoota');
+        }
+        if ($response)
+        {
+            return $response;
+        }
+        else
+        {
+            return $this->respondError(404, [], 'User not found');
+        }
     }
 }

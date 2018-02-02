@@ -24,6 +24,6 @@ $router->post('/auth', function () use ($router) {
 
 $router->post('/api/v1/users/register', 'Auth\\RegisterController@register');
 $router->get('/api/v1/users/exists', 'UsersController@emailIsValid');
-$router->post('/api/v1/users/auth', 'UsersController@getByCredentials');
+$router->post('/api/v1/users/auth', 'AuthController@auth');
 $router->get('/api/v1/users/{id}', 'UsersController@byId');
 $router->get('/api/v1/users', 'UsersController@index');

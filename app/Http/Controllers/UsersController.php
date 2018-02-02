@@ -41,6 +41,7 @@ class UsersController extends DriblyController {
 
     public function getByCredentials(Request $request) {
         if ($request->has('email') && $request->has('password')) {
+                
             $response = $this->respondError(404, ['email' => 'Either your email or password ' . $request->password . ' banana']);
         } else {
             $response = $this->respondError(400, ['email' => 'You Must supply an email address'], 'Search parameters missing');
