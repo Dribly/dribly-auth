@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
 use Dribly\User as User;
@@ -8,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class RegisterController extends \App\Http\Controllers\DriblyController {
+class RegisterController extends \App\Http\Controllers\DriblyController
+{
     /*
       |--------------------------------------------------------------------------
       | Register Controller
@@ -30,37 +32,43 @@ class RegisterController extends \App\Http\Controllers\DriblyController {
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data) {
+    protected function validator(array $data)
+    {
         return Validator::make($data, [
-                'firstname' => 'required|string|max:255',
-                'lastname' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:users',
-                'password' => 'required|string|min:2|confirmed',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:2|confirmed',
         ]);
     }
 
     /**
      * Handle a registration request for the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $response = null;
         try {
-            \Log::debug(print_r($request->json(), true));
-            \Log::debug(print_r($request->all(), true));
-            $this->validator($request->all())->validate();
-            $user = $this->create($request->all());
+            $requestData = $request->only('firstname', 'lastname', 'email', 'password', 'password_confirmation');
+
+            \Log::debug(print_r($requestData, true));
+            $this->validator($requestData)->validate();
+            $user = $this->create($requestData);
             if ($this->registered($request, $user)) {
                 $response = $this->respondSuccess($user);
             } else {
-                $response = $this->respondError(400, $e->errors(), "");
+                $response = $this->respondError(400, [], "Error when registering");
             }
         } catch (\Illuminate\Validation\ValidationException $e) {
+            \Log::error("HERE");
+            \Log::error(print_r($e->errors(), true));
+            \Log::error("THERE");
             $response = $this->respondError(400, $e->errors(), "Some fields are not correct");
             \Log::error(print_r($e->getMessage(), true));
         } catch (\Exception $e) {
@@ -79,7 +87,8 @@ class RegisterController extends \App\Http\Controllers\DriblyController {
      * @param type $fields
      * @return array
      */
-    protected function getDataValueArray(stdClass $input, $fields) {
+    protected function getDataValueArray(stdClass $input, $fields)
+    {
         $result = [];
         foreach ($fields as $fieldName) {
             // Populate an array member whether the property exists or not
@@ -91,26 +100,28 @@ class RegisterController extends \App\Http\Controllers\DriblyController {
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Dribly\User
      */
-    protected function create(array $data): \Dribly\User {
+    protected function create(array $data): \Dribly\User
+    {
         return User::create([
-                'firstname' => $data['firstname'],
-                'lastname' => $data['lastname'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
         ]);
     }
 
     /**
      * The user has been registered.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
+     * @param  \Illuminate\Http\Request $request
+     * @param  mixed $user
      * @return mixed
      */
-    protected function registered(Request $request, $user) {
-        ; //
+    protected function registered(Request $request, $user)
+    {
+       return (0 < $user->id)   ; //
     }
 }

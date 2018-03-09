@@ -13,7 +13,8 @@ class DriblyController extends Controller {
      */
     public function respondError(int $code, array $fieldErrors = [], string $error = "") {
         $response = new \Laravel\Lumen\Http\ResponseFactory();
-        \Log::error($code . " : " . $error . " " . implode($fieldErrors));
+
+        \Log::error($code . " : " . $error . " " . print_r($fieldErrors,true));
         return $response->json(["fieldErrors" => $fieldErrors, "error" => $error], $code);
     }
 
